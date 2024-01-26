@@ -21,6 +21,7 @@ void test2(std::string filename) {
 int main(int argc, char* argv[]) {
 	if(argc < 2) {
 		std::cout << "Cannot run program" << std::endl;
+		return EXIT_FAILURE;
 	}
 
 	std::cout << "argument count: " << argc << std::endl;
@@ -28,7 +29,7 @@ int main(int argc, char* argv[]) {
 	std::cout << "argv[1] is " << argv[1] << std::endl;
 
 	test1(argv[1]);
-	test2(argv[2]);
+	test2(argv[1]);
 	return 0;
 }
 
