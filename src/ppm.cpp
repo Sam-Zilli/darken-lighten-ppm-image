@@ -54,6 +54,12 @@ PPM::~PPM() {
 void PPM::savePPM(std::string outFileName) {
 	std::ofstream myFile;
 	myFile.open(outFileName);
+
+	myFile << "P3\n";
+        myFile << "# saved by us\n";
+        myFile << mWidth << " " << mHeight << "\n";
+        myFile << mMaxRange << "\n";
+
 	for (int i = 0; i < mPixels.size(); i++) {
 		myFile << mPixels[i] << "\n";
 	}
